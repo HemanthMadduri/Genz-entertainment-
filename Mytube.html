@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyTube</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    header {
+      background-color: #202020;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      color: red;
+      font-size: 28px;
+      margin: 0;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .video-card {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+    .video-thumb {
+      width: 100%;
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+    .video-info {
+      padding: 10px;
+    }
+    .video-info h4 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .video-player {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .video-player video {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .close-btn {
+      margin-top: 15px;
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    <h1>MyTube</h1>
+  </header>
+
+  <div class="container" id="videoList">
+    <!-- Video cards will be injected here by JavaScript -->
+  </div>
+
+  <div class="video-player" id="videoPlayer">
+    <video controls id="mainVideo"></video>
+    <button class="close-btn" onclick="closePlayer()">Close</button>
+  </div>
+
+  <script>
+    const videos = [
+      { title: "MyTube Intro", src: "sample1.mp4", thumb: "https://via.placeholder.com/480x270?text=Intro" },
+      { title: "Funny Cats", src: "sample2.mp4", thumb: "https://via.placeholder.com/480x270?text=Cats" },
+      { title: "Nature Walk", src: "sample3.mp4", thumb: "https://via.placeholder.com/480x270?text=Nature" },
+      { title: "Gaming Stream", src: "sample4.mp4", thumb: "https://via.placeholder.com/480x270?text=Gaming" },
+      { title: "Bike Stunts", src: "sample5.mp4", thumb: "https://via.placeholder.com/480x270?text=Stunts" },
+      { title: "BGMI Highlights", src: "sample6.mp4", thumb: "https://via.placeholder.com/480x270?text=BGMI" }
+    ];
+
+    const videoList = document.getElementById("videoList");
+    const videoPlayer = document.getElementById("videoPlayer");
+    const mainVideo = document.getElementById("mainVideo");
+
+    function createVideoCard(video) {
+      const card = document.createElement("div");
+      card.className = "video-card";
+      card.onclick = () => playVideo(video.src);
+
+      const thumb = document.createElement("div");
+      thumb.className = "video-thumb";
+      thumb.style.backgroundImage = `url(${video.thumb})`;
+
+      const info = document.createElement("div");
+      info.className = "video-info";
+      info.innerHTML = `<h4>${video.title}</h4>`;
+
+      card.appendChild(thumb);
+      card.appendChild(info);
+      return card;
+    }
+
+    function playVideo(src) {
+      mainVideo.src = src;
+      videoPlayer.style.display = "flex";
+      mainVideo.play();
+    }
+
+    function closePlayer() {
+      videoPlayer.style.display = "none";
+      mainVideo.pause();
+      mainVideo.currentTime = 0;
+    }
+
+    videos.forEach(video => {
+      const card = createVideoCard(video);
+      videoList.appendChild(card);
+    });
+  </script>
+</body>
+</html>
