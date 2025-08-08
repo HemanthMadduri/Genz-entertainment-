@@ -1,149 +1,81 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MyTube</title>
+  <title>MyTube - Entertainment Videos</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
-    }
-    header {
-      background-color: #202020;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header h1 {
-      color: red;
-      font-size: 28px;
       margin: 0;
+      background-color: #f0f0f0;
     }
-    .container {
+
+    header {
+      background-color: #ff0000;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       padding: 20px;
     }
+
     .video-card {
-      background-color: #1e1e1e;
+      background-color: white;
       border-radius: 8px;
       overflow: hidden;
-      cursor: pointer;
-      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .video-card:hover {
-      transform: scale(1.03);
-    }
-    .video-thumb {
+
+    .video-card iframe {
       width: 100%;
-      height: 160px;
-      background-size: cover;
-      background-position: center;
+      height: 200px;
     }
-    .video-info {
+
+    .video-title {
       padding: 10px;
-    }
-    .video-info h4 {
-      margin: 0;
-      font-size: 16px;
-    }
-    .video-player {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.9);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 999;
-    }
-    .video-player video {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
-    .close-btn {
-      margin-top: 15px;
-      background: red;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>MyTube</h1>
-  </header>
+  <header>MyTube - Your Entertainment Hub</header>
 
-  <div class="container" id="videoList">
-    <!-- Video cards will be injected here by JavaScript -->
+  <div class="video-grid">
+    
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Video 1" allowfullscreen></iframe>
+      <div class="video-title">Funny Moments Compilation</div>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" 
+              title="Video 2" allowfullscreen></iframe>
+      <div class="video-title">Epic Fails 2025</div>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/V-_O7nl0Ii0" 
+              title="Video 3" allowfullscreen></iframe>
+      <div class="video-title">Dance Mashup - Top Hits</div>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" 
+              title="Video 4" allowfullscreen></iframe>
+      <div class="video-title">Motivational Talk</div>
+    </div>
+
   </div>
 
-  <div class="video-player" id="videoPlayer">
-    <video controls id="mainVideo"></video>
-    <button class="close-btn" onclick="closePlayer()">Close</button>
-  </div>
-
-  <script>
-    const videos = [
-      { title: "MyTube Intro", src: "sample1.mp4", thumb: "https://via.placeholder.com/480x270?text=Intro" },
-      { title: "Funny Cats", src: "sample2.mp4", thumb: "https://via.placeholder.com/480x270?text=Cats" },
-      { title: "Nature Walk", src: "sample3.mp4", thumb: "https://via.placeholder.com/480x270?text=Nature" },
-      { title: "Gaming Stream", src: "sample4.mp4", thumb: "https://via.placeholder.com/480x270?text=Gaming" },
-      { title: "Bike Stunts", src: "sample5.mp4", thumb: "https://via.placeholder.com/480x270?text=Stunts" },
-      { title: "BGMI Highlights", src: "sample6.mp4", thumb: "https://via.placeholder.com/480x270?text=BGMI" }
-    ];
-
-    const videoList = document.getElementById("videoList");
-    const videoPlayer = document.getElementById("videoPlayer");
-    const mainVideo = document.getElementById("mainVideo");
-
-    function createVideoCard(video) {
-      const card = document.createElement("div");
-      card.className = "video-card";
-      card.onclick = () => playVideo(video.src);
-
-      const thumb = document.createElement("div");
-      thumb.className = "video-thumb";
-      thumb.style.backgroundImage = `url(${video.thumb})`;
-
-      const info = document.createElement("div");
-      info.className = "video-info";
-      info.innerHTML = `<h4>${video.title}</h4>`;
-
-      card.appendChild(thumb);
-      card.appendChild(info);
-      return card;
-    }
-
-    function playVideo(src) {
-      mainVideo.src = src;
-      videoPlayer.style.display = "flex";
-      mainVideo.play();
-    }
-
-    function closePlayer() {
-      videoPlayer.style.display = "none";
-      mainVideo.pause();
-      mainVideo.currentTime = 0;
-    }
-
-    videos.forEach(video => {
-      const card = createVideoCard(video);
-      videoList.appendChild(card);
-    });
-  </script>
 </body>
 </html>
