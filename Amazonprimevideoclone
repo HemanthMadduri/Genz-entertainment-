@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="https://via.placeholder.com/100x30.png?text=Prime+Logo" alt="Prime Video Logo" class="logo">
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Store</a>
+                <a href="#">Live TV</a>
+                <a href="#">Categories</a>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <span class="material-icons search-icon">search</span>
+            <div class="dropdown">
+                <span>EN</span>
+                <span class="material-icons dropdown-arrow">arrow_drop_down</span>
+            </div>
+            <img src="https://via.placeholder.com/32x32.png?text=User" alt="User Profile" class="user-avatar">
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">The Grand Tour</h1>
+                <p class="hero-description">The boys are back. Join Jeremy, Richard, and James in their latest adventures.</p>
+                <div class="hero-buttons">
+                    <button class="play-button"><span class="material-icons">play_arrow</span> Play</button>
+                    <button class="trailer-button">Watch Trailer</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="movie-row-container">
+            <h2 class="movie-row-title">Recommended movies</h2>
+            <div class="movie-row">
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+1" alt="Movie 1"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+2" alt="Movie 2"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+3" alt="Movie 3"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+4" alt="Movie 4"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+5" alt="Movie 5"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+6" alt="Movie 6"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+7" alt="Movie 7"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Movie+8" alt="Movie 8"></div>
+            </div>
+        </section>
+
+        <section class="movie-row-container">
+            <h2 class="movie-row-title">Latest TV shows</h2>
+            <div class="movie-row">
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+1" alt="Show 1"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+2" alt="Show 2"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+3" alt="Show 3"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+4" alt="Show 4"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+5" alt="Show 5"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+6" alt="Show 6"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+7" alt="Show 7"></div>
+                <div class="movie-card"><img src="https://via.placeholder.com/200x300.png?text=Show+8" alt="Show 8"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms and Privacy Notice</a>
+            <a href="#">Send us feedback</a>
+            <a href="#">Help</a>
+            <a href="#">© 1996-2025, PrimeVideo.com, Inc. or its affiliates</a>
+        </div>
+    </footer>
+
+</body>
+</html>
 
