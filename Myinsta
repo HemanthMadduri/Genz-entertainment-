@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyInsta</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #dbdbdb;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-family: 'Billabong', 'Segoe UI', cursive;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0;
+            color: #262626;
+        }
+
+        .header .icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .main-feed {
+            padding-top: 10px;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+
+        .post {
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            margin-bottom: 10px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+        }
+
+        .post-header img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .post-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+
+        .action-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            border-top: 1px solid #dbdbdb;
+            background-color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>MyInsta</h1>
+        <div class="icons">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17.65a5 5 0 0 1-5.12 5.12c-.5-.14-.84-.25-1.13-.39-.41-.2-.84-.44-1.25-.68-.6-.35-1.24-.72-1.89-1.08-.6-.35-1.2-.7-1.78-1.03-.5-.29-1-.55-1.5-.79-.5-.24-.99-.48-1.47-.73-1-.5-2.02-.99-3.08-1.46C2.7 13.56 1 11.23 1 8a7 7 0 0 1 14 0c0 3.23-1.7 5.56-4.54 7.27-1.06.47-2.08.96-3.08 1.46-.48.25-.97.49-1.47.73-.5.24-1 .5-1.5.79-.58.33-1.18.68-1.78 1.03-.65.36-1.29.73-1.89 1.08-.41.24-.84.48-1.25.68-.29.14-.63.25-1.13.39a5 5 0 0 1-5.12-5.12c-.14-.5-.25-.84-.39-1.13-.2-.41-.44-.84-.68-1.25-.35-.6-.72-1.24-1.08-1.89-.35-.6-.7-1.2-1.03-1.78-.29-.5-.55-1-.79-1.5-.24-.5-.48-.99-.73-1.47-.5-1-1-2.02-1.46-3.08A7 7 0 0 1 1 8a7 7 0 0 1 14 0c0 3.23-1.7 5.56-4.54 7.27-1.06.47-2.08.96-3.08 1.46-.48.25-.97.49-1.47.73-.5.24-1 .5-1.5.79-.58.33-1.18.68-1.78 1.03-.65.36-1.29.73-1.89 1.08z"></path><path d="M22 17.65a5 5 0 0 1-5.12 5.12c-.5-.14-.84-.25-1.13-.39-.41-.2-.84-.44-1.25-.68-.6-.35-1.24-.72-1.89-1.08-.6-.35-1.2-.7-1.78-1.03-.5-.29-1-.55-1.5-.79-.5-.24-.99-.48-1.47-.73-1-.5-2.02-.99-3.08-1.46C2.7 13.56 1 11.23 1 8a7 7 0 0 1 14 0c0 3.23-1.7 5.56-4.54 7.27-1.06.47-2.08.96-3.08 1.46-.48.25-.97.49-1.47.73-.5.24-1 .5-1.5.79-.58.33-1.18.68-1.78 1.03-.65.36-1.29.73-1.89 1.08zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path></svg>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17.65a5 5 0 0 1-5.12 5.12c-.5-.14-.84-.25-1.13-.39-.41-.2-.84-.44-1.25-.68-.6-.35-1.24-.72-1.89-1.08-.6-.35-1.2-.7-1.78-1.03-.5-.29-1-.55-1.5-.79-.5-.24-.99-.48-1.47-.73-1-.5-2.02-.99-3.08-1.46C2.7 13.56 1 11.23 1 8a7 7 0 0 1 14 0c0 3.23-1.7 5.56-4.54 7.27-1.06.47-2.08.96-3.08 1.46-.48.25-.97.49-1.47.73-.5.24-1 .5-1.5.79-.58.33-1.18.68-1.78 1.03-.65.36-1.29.73-1.89 1.08zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path></svg>
+        </div>
+    </header>
+
+    <main class="main-feed">
+        <article class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/32" alt="User Profile">
+                <span>user_name_1</span>
+            </div>
+            <div class="post-image">
+                <img src="https://via.placeholder.com/600x600.png?text=MyInsta+Post+1" alt="Post Image">
+            </div>
+            <div class="post-actions">
+                <div class="action-icons">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/32" alt="User Profile">
+                <span>user_name_2</span>
+            </div>
+            <div class="post-image">
+                <img src="https://via.placeholder.com/600x600.png?text=MyInsta+Post+2" alt="Post Image">
+            </div>
+            <div class="post-actions">
+                <div class="action-icons">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="
